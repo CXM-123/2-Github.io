@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中国基站</title>
+    <link rel="stylesheet" href="css/index.css">  
+    <script src="js/echarts.min.js"></script>
+    <script src="js/chalk.js"></script>
+    <script src="js/flexible.js"></script>
+    <script src="js/index.js"></script>
+    <script src = "js/china.js"></script>
+</head>
+<body>
+ <header>
+  <div class="nav">
+<ul class="ullist">
+<li class="libt">
+<a href="index.html">首页</a>
+</li>
+<li class="libt">
+<a href="第二部分.html">基站数量变化</a>
+</li>
+<li class="libt">
+<a href="第三部分.html">信号覆盖范围</a>
+</li>
+<li class="libt">
+<a href="第四部分.html">关于5G</a>
+</li>
+<li class="libt">
+  <a href="#">last</a>
+  </li>
+<ul>
+</div>
+<div class="a">
+  <input type="text" class="b">
+  <a href="#" class="c">
+      <img src="images/搜索框.png" style="width: 30px;">
+  </a>
+</div>
+ </header>
+ <footer>
+<div class="subnav" style="position: relative;">
+  <p style="position: absolute; width: 300px;left: 30px;top: 150px; line-height: 50px; font-size:20px; color: aliceblue;">
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp基站即公用移动通信基站，是移动设备接入互联网的接口设备，也是无线电台站的一种形式，是指在一定的无线电覆盖区中，通过移动通信交换中心，与移动电话终端之间进行信息传递的无线电收发信电台。移动通信基站的建设是移动通信运营商投资的重要部分，移动通信基站的建设一般都是围绕覆盖面、通话质量、投资效益、建设难易、维护方便等要素进行。随着移动通信网络业务向数据化、分组化方向发展，移动通信基站的发展趋势也必然是宽带化、大覆盖面建设及IP化。
+  </p>
+</div>
+ </footer>
+ <div class="main-frist">
+  <p class="main-zero">2015-2021年2G到5G基站数量变化</p>
+ <div class="main-one"> 
+  <script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart1 = echarts.init(document.querySelector('.main-one'),'chalk');
+    // 指定图表的配置项和数据
+    var option1 = {
+   title: {
+     text: '2015-2021年2G到5G基站数量变化',
+        left: "center",
+        bottom: "10",
+        textStyle: {
+           fontSize: 20
+        },
+   },
+   tooltip: {
+     trigger: 'axis',
+     axisPointer: {
+       type: 'shadow'
+     }
+   },
+   legend: {
+    top:30
+   },
+   grid: {
+     left: '3%',
+     right: '10%',
+     bottom: '10%',
+     containLabel: true
+   },
+   toolbox: {
+     show: true,
+     orient:'vertical',
+     top:'center',
+     right:'20',
+     feature: {
+       dataZoom: {
+         yAxisIndex: "none"
+       },
+       dataView: {
+         readOnly: false
+       },
+       magicType: {
+         type: ["line", "bar"]
+       },
+       iconStyle:{
+        color:'pink',
+       },
+       restore: {},
+       saveAsImage: {}
+     }
+   },
+   yAxis: {
+     type: 'value',
+     name:"单位（万）",
+     boundaryGap: [0, 0.01]
+   },
+   xAxis: {
+     type: 'category',
+     data: ['2015', '2016', '2017', '2018', '2019', '2020','2021']
+   },
+   series: [
+     {
+       name: '2G/3G',
+       type: 'bar',
+       data: [289, 296, 291, 295, 284, 284, 264],
+       emphasis: {
+            focus: 'series',
+            blurScope: 'coordinateSystem'
+           
+           }
+     },
+     {
+       name: '4G',
+       type: 'bar',
+       data: [177, 263, 328, 372, 544, 575, 590],
+       emphasis: {
+            focus: 'series',
+            blurScope: 'coordinateSystem'
+           
+           }
+     },
+     {
+       name: '5G',
+       type: 'bar',
+       data: [0, 0, 0, 0, 13, 72, 142.5],
+       emphasis: {
+            focus: 'series',
+            blurScope: 'coordinateSystem'
+           
+           }
+     }
+   ]
+ };
+      //label:{
+      //     show:true,
+     //   fontsize:30
+     // },
+     //markLine:{
+        // data:[
+            // {
+               //  type:'average'
+            // }
+        // ]
+   //  }
+     
+ 
+    // 使用刚指定的配置项和数据显示图表。
+    myChart1.setOption(option1);
+    window.onresize = function() {
+      myChart1.resize();
+  };
+  </script>
+  </div>
+  <div class="main-two"> 
+    <div style="position: relative; width:1500;height:700;background-color: rgb(146, 225, 175);background-color: aqua;">
+      <p style="position: absolute; width: 500px;left: 200px;top: 80px;line-height: 50px; font-size:20px; color: aliceblue;">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp2019年是中国的5G元年，但过去一年通信业发展的一个典型特征是新建4G基站的猛增。</p>
+     <p style="position: absolute;width: 500px;left: 200px;top: 180px;font-size: 20px;line-height: 50px; color: aliceblue;">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp在4G成熟、5G商用的背景下，2G/3G减频退网成为业界重点关注的一个话题，2G/3G基站数量的变化也可以说是这一话题的缩影。
+      从2015年开始，2G+3G基站占总基站数量的比例开始逐年下滑，2019年这一数字仅有34%。而从绝对数来看，2016年2G+3G基站总数达到296万这一历史峰值，之后开始逐渐减少。过去3年绝对数量减少的速度并不快，但预计在5G商用和用户加速迁移情况下，2G+3G基站总数会迎来快速减少的态势。</p>
+      <div id="main" style="position: absolute;width:600px;height:550px;left:750px;"></div>
+     </div>
+
+  </div>
+</div>
+<div class="main-sec">
+  <p class="main0">各类基站的信号覆盖范围</p>
+  <div class="main1"> 
+    <div style="position: relative; width:1500;height:700;background-color: rgb(146, 225, 175);background-color: aqua;">
+     <p style="position: absolute; width: 500px;left: 200px;top: 150px;line-height: 50px; font-size:21px; color: aliceblue;">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp手机基站无线通讯是以电磁波为载体,来进行各种信息的交换,而电磁波具有波的特性,频率越高,波长就越短,因此不同的频率的电磁波决定了他们不同的特性以及应用场景。</p>
+    <p style="position: absolute;width: 500px;left: 200px;top: 350px;font-size: 21px;line-height: 50px; color: aliceblue; ">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp5G所使用的是毫米波,穿透障碍物所产生的能力消耗会使得传输距离变短，那么单个基站信号覆盖的范围就越小,想要确保信号有效的覆盖，基站的数量就要增加。</p>
+     <div id="main" style="position: absolute;width:600px;height:550px;left:750px;"></div>
+    </div>
+  <img src="images/2G.png" style="width: 40px;height: 40px;margin-left: 300px;margin-top: 40px;">
+  <img src="images/3G.png" style="width: 40px;height: 40px;margin-left: 50px;margin-top: 40px;;">
+  <img src="images/4G.png" style="width: 40px;height: 40px;margin-left: 50px;margin-top: 40px;">
+  <img src="images/5G.png" style="width: 40px;height: 40px;margin-left: 50px;margin-top: 40px;">
+   </div>
+   <div class="main2"> 
+<script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.querySelector('.main2'),"chalk");  //要加js名字
+  
+        // 指定图表的配置项和数据
+  
+    var option = {
+    tooltip: {
+      trigger: 'item'
+    },
+  
+    legend: {
+      top: '5%',
+      left: 'center'
+    },
+    series: [
+      {
+        name: '各基站信号覆盖范围',
+        type: 'pie',
+        radius: ['40%', '70%'],
+        avoidLabelOverlap: false,
+        itemStyle: {
+          borderRadius: 10,
+          
+          borderColor: '#fff',
+          borderWidth: 2
+        },
+        label: {
+          show: false,
+          position: 'center'
+        },
+        emphasis: {   //高亮
+          label: {
+            show: true,
+            fontSize: '40',
+            fontWeight: 'bold'
+          }
+        },
+        labelLine: {
+          show: false
+        },
+        data: [
+          { value: 8000, name: '2G (m)' },
+          { value: 4000, name: '3G (m)' },
+          { value: 2000, name: '4G (m)' },
+          { value: 250, name: '5G (m)' },
+        ]
+      }
+    ]
+  };
+// 使用刚指定的配置项和数据显示图表。
+myChart.setOption(option);
+window.onresize = function() {
+    myChart.resize();
+  };
+</script>
+   </div>
+ </div>
+ <div class="last">
+  <script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart2 = echarts.init(document.querySelector('.last'),"chalk");
+
+    // 指定图表的配置项和数据
+var name_title = "中国各省5G基站数量（万个）"
+    var mapName = 'china'
+    var data = [
+    { name: '广东', value: 20.8 },
+{ name: '江苏', value: 17.4 },
+{ name: '山东', value: 16 },
+{ name: '浙江', value: 14.82 },
+{ name: '河南', value: 13.36 },
+{ name: '四川', value: 9.8 },
+{ name: '湖北', value: 6.85 },
+{ name: '湖南', value: 7.7 },
+{ name: '河北', value: 8.38 },
+{ name: '福建', value: 6.7 },
+{ name: '上海', value: 6 },
+{ name: '北京', value: 6.3 },
+{ name: '安徽', value: 7.4 },
+{ name: '辽宁', value: 6.47 },
+{ name: '陕西', value: 5.09 },
+{ name: '江西', value: 5.3 },
+{ name: '重庆', value: 5 },
+{ name: '广西', value: 5.6 },
+{ name: '天津', value: 5 },
+{ name: '云南', value: 5.5 },
+{ name: '内蒙古', value: 2 },
+{ name: '山西', value: 5 },
+{ name: '黑龙江', value: 4.09 },
+{ name: '吉林', value: 2.8 },
+{ name: '贵州', value: 6.8 },
+{ name: '新疆', value: 3 },
+{ name: '甘肃', value: 2.07 },
+{ name: '海南', value: 1.3 },
+{ name: '宁夏', value: 0.9 },
+{ name: '青海', value: 0.84 },
+{ name: '西藏', value: 0.67 }
+
+    ];
+    
+    var option2 = {
+        title: {
+            text: name_title,
+            x: 'center',
+            top:20,
+            textStyle: {
+                fontSize: 30
+            },                
+        },
+        
+        tooltip: {
+            trigger: 'item',
+            formatter: function(params) {                        
+                    var toolTiphtml = ''
+        if (isNaN(params.value)){
+                    toolTiphtml = params.name + '数量: 0 万个'
+        }else{
+        toolTiphtml = params.name + '数量: ' + params.value + '万个'
+        }
+                    //console.log(toolTiphtml)                        
+                    return toolTiphtml;                   
+            }
+        },
+        toolbox: {
+            feature: {
+                saveAsImage: {}
+            }
+        },
+        visualMap: {
+            show: true,
+            left: '30',
+            bottom: '30',
+            symbolSize:30,
+            seriesIndex: [0],
+            type:'piecewise',
+            pieces:[
+                {min:20, color: 'rgb(254,57,101)'},
+                {min:10, max:19.99, color: 'rgb(252,157,154)'},
+                {min:5, max:9.99, color: 'rgb(249,205,173)'},
+                {min:1, max:5.99, color: 'rgb(200,200,169)'},
+                {min:0, max:0.99, color: 'rgb(131,175,155)'},
+            ],            
+            textStyle: {
+                color: '#fffff',
+                fontSize:20
+            }
+        },            
+        geo: {
+            show: true,
+            map: mapName,
+            label: {
+                normal: {
+                    show: true,
+                    fontSize:12,
+                },
+                emphasis: {
+                    show: false,
+                }
+            },
+            roam: false,
+            itemStyle: {
+                normal: {
+                    areaColor: '#FFFFFF',
+                    borderColor: '#666666',
+                },
+                emphasis: {
+                    areaColor: '#0099CC',
+                }
+            }
+        },
+        series: [
+            {
+                type: 'map',
+                map: mapName,
+                geoIndex: 0,           
+                animation: false,
+                data: data
+            },
+        ]
+    };
+
+    // 使用刚指定的配置项和数据显示图表。
+    myChart2.setOption(option2);
+    window.onresize = function() {
+    myChart2.resize();
+  };
+</script>
+ </div>
+ <div class="di" >
+<img src="images/中国基站.jpg" alt="">
+ </div>
+</body>
+</html>

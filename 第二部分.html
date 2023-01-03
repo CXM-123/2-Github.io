@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>基站数量变化</title>
+    <link rel="stylesheet" href="css/index.css">  
+    <script src="js/echarts.min.js"></script>
+    <script src="js/chalk.js"></script>
+    <script src="js/flexible.js"></script>
+</head>
+<body>
+  <header>
+    <div class="nav">
+        <ul class="ullist">
+        <li class="libt">
+          <a href="index.html">首页</a>
+        </li>
+        <li class="libt">
+        <a href="第二部分.html">基站数量变化</a>
+        </li>
+        <li class="libt">
+        <a href="第三部分.html">信号覆盖范围</a>
+        </li>
+        <li class="libt">
+        <a href="第四部分.html">关于5G</a>
+        </li>
+        <li class="libt">
+          <a href="#">last</a>
+          </li>
+        <ul>
+        </div>
+  <div class="a">
+    <input type="text" class="b">
+    <a href="#" class="c">
+        <img src="images/搜索框.png" style="width: 30px;">
+    </a>
+  </div>
+   </header>
+    <div class="main-frist">
+        <p class="main-zero">2015-2021年2G到5G基站数量变化</p>
+       <div class="main-one"> 
+        <script type="text/javascript">
+          // 基于准备好的dom，初始化echarts实例
+          var myChart1 = echarts.init(document.querySelector('.main-one'),'chalk');
+          // 指定图表的配置项和数据
+          var option1 = {
+         title: {
+           text: '2015-2021年2G到5G基站数量变化',
+              left: "center",
+              bottom: "10",
+              textStyle: {
+                 fontSize: 20
+              },
+         },
+         tooltip: {
+           trigger: 'axis',
+           axisPointer: {
+             type: 'shadow'
+           }
+         },
+         legend: {
+          top:30
+         },
+         grid: {
+           left: '3%',
+           right: '10%',
+           bottom: '10%',
+           containLabel: true
+         },
+         toolbox: {
+           show: true,
+           orient:'vertical',
+           top:'center',
+           right:'20',
+           feature: {
+             dataZoom: {
+               yAxisIndex: "none"
+             },
+             dataView: {
+               readOnly: false
+             },
+             magicType: {
+               type: ["line", "bar"]
+             },
+             iconStyle:{
+              color:'pink',
+             },
+             restore: {},
+             saveAsImage: {}
+           }
+         },
+         yAxis: {
+           type: 'value',
+           name:"单位（万）",
+           boundaryGap: [0, 0.01]
+         },
+         xAxis: {
+           type: 'category',
+           data: ['2015', '2016', '2017', '2018', '2019', '2020','2021']
+         },
+         series: [
+           {
+             name: '2G/3G',
+             type: 'bar',
+             data: [289, 296, 291, 295, 284, 284, 264],
+             emphasis: {
+                  focus: 'series',
+                  blurScope: 'coordinateSystem'
+                 
+                 }
+           },
+           {
+             name: '4G',
+             type: 'bar',
+             data: [177, 263, 328, 372, 544, 575, 590],
+             emphasis: {
+                  focus: 'series',
+                  blurScope: 'coordinateSystem'
+                 
+                 }
+           },
+           {
+             name: '5G',
+             type: 'bar',
+             data: [0, 0, 0, 0, 13, 72, 142.5],
+             emphasis: {
+                  focus: 'series',
+                  blurScope: 'coordinateSystem'
+                 
+                 }
+           }
+         ]
+       };
+            //label:{
+            //     show:true,
+           //   fontsize:30
+           // },
+           //markLine:{
+              // data:[
+                  // {
+                     //  type:'average'
+                  // }
+              // ]
+         //  }
+           
+       
+          // 使用刚指定的配置项和数据显示图表。
+          myChart1.setOption(option1);
+          window.onresize = function() {
+            myChart1.resize();
+        };
+        </script>
+        </div>
+        <div class="main-two"> 
+          <div style="position: relative; width:1500;height:700;background-color: rgb(146, 225, 175);background-color: aqua;">
+            <p style="position: absolute; width: 500px;left: 200px;top: 80px;line-height: 50px; font-size:20px; color: aliceblue;">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp2019年是中国的5G元年，但过去一年通信业发展的一个典型特征是新建4G基站的猛增。</p>
+           <p style="position: absolute;width: 500px;left: 200px;top: 180px;font-size: 20px;line-height: 50px; color: aliceblue;">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp在4G成熟、5G商用的背景下，2G/3G减频退网成为业界重点关注的一个话题，2G/3G基站数量的变化也可以说是这一话题的缩影。
+            从2015年开始，2G+3G基站占总基站数量的比例开始逐年下滑，2019年这一数字仅有34%。而从绝对数来看，2016年2G+3G基站总数达到296万这一历史峰值，之后开始逐渐减少。过去3年绝对数量减少的速度并不快，但预计在5G商用和用户加速迁移情况下，2G+3G基站总数会迎来快速减少的态势。</p>
+            <div id="main" style="position: absolute;width:600px;height:550px;left:750px;"></div>
+           </div>
+      
+        </div>
+      </div>
+</body>
+</html>

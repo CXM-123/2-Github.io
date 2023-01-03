@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>ECharts</title>
+    <!-- 引入刚刚下载的 ECharts 文件 -->
+    <title>Document</title>
+    <script src="js/echarts.js"></script>
+
+</head>
+<body style="background-color: rgba(187, 163, 113, 0.73);">
+       <p style="text-align: center;font-size: 40px;margin-top: 50px;">各类基站的信号覆盖范围</p>
+       <div style="position: relative; width:1500;height:700;background-color: rgb(146, 225, 175);background-color: aqua;">
+        <p style="position: absolute; width: 400px;left: 200px;top: 100px;line-height: 50px; font-size:20px;;">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp手机基站无线通讯是以电磁波为载体,来进行各种信息的交换,而电磁波具有波的特性,频率越高,波长就越短,因此不同的频率的电磁波决定了他们不同的特性以及应用场景。</p>
+       <p style="position: absolute;width: 400px;left: 200px;top: 300px;font-size: 20px;line-height: 50px; ">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp5G所使用的是毫米波,穿透障碍物所产生的能力消耗会使得传输距离变短，那么单个基站信号覆盖的范围就越小,想要确保信号有效的覆盖，基站的数量就要增加。</p>
+        <div id="main" style="position: absolute;width:600px;height:550px;left:750px;"></div>
+       </div>
+     <img src="images/2G.png" style="width: 40px;height: 40px;margin-left: 250px;margin-top: 40px;">
+     <img src="images/3G.png" style="width: 40px;height: 40px;margin-left: 50px;margin-top: 40px;;">
+     <img src="images/4G.png" style="width: 40px;height: 40px;margin-left: 50px;margin-top: 40px;">
+     <img src="images/5G.png" style="width: 40px;height: 40px;margin-left: 50px;margin-top: 40px;">
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main'),'chalk');  //要加js名字
+  
+        // 指定图表的配置项和数据
+  
+    var option = {
+    tooltip: {
+      trigger: 'item'
+    },
+   
+    legend: {
+      top: '5%',
+      left: 'center'
+    },
+    series: [
+      {
+        name: '各基站信号覆盖范围',
+        type: 'pie',
+        radius: ['40%', '70%'],
+        avoidLabelOverlap: false,
+        itemStyle: {
+          borderRadius: 10,
+          
+          borderColor: '#fff',
+          borderWidth: 2
+        },
+        label: {
+          show: false,
+          position: 'center'
+        },
+        emphasis: {   //高亮
+          label: {
+            show: true,
+            fontSize: '40',
+            fontWeight: 'bold'
+          }
+        },
+        labelLine: {
+          show: false
+        },
+        data: [
+          { value: 8000, name: '2G (m)' },
+          { value: 4000, name: '3G (m)' },
+          { value: 2000, name: '4G (m)' },
+          { value: 250, name: '5G (m)' },
+        ]
+      }
+    ]
+  };
+  
+// 使用刚指定的配置项和数据显示图表。
+myChart.setOption(option);
+</script>
+    
+</body>
+</html>
